@@ -1,6 +1,5 @@
-package com.rafael.api.normalize;
+package com.rafael.api.normalize.service;
 
-import com.rafael.api.normalize.service.NormalizeService;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,7 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class NormalizeServiceTests {
+class NormalizeServiceTest {
 
     @Test
     public void testNormalizeJobTitle() {
