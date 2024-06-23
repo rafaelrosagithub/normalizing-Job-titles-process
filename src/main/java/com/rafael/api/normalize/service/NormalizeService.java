@@ -20,10 +20,12 @@ public class NormalizeService {
         this.levenshteinDistance = new LevenshteinDistance();
     }
 
+    // Method to normalize the input job title to the closest predefined job title
     public String normalizeJobTitle(String jobTitle) {
         String closestMatch = null;
         int minDistance = Integer.MAX_VALUE;
 
+        // Iterate through all normalized job titles to find the closest match using Levenshtein distance
         for (String normalizedTitle : normalize.normalizedJobTitles()) {
             int distance = levenshteinDistance.apply(jobTitle.toLowerCase(), normalizedTitle.toLowerCase());
             if (distance < minDistance) {
@@ -40,6 +42,7 @@ public class NormalizeService {
         return closestMatch;
     }
 
+    // Method to retrieve the list of predefined normalized job titles
     public List<String> getNormalizedJobTitles() {
         return normalize.normalizedJobTitles();
     }

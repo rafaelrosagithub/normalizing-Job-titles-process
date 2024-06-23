@@ -19,6 +19,7 @@ public class NormalizeControllerIntegrationTest {
 
     @Test
     public void testNormalizeJobTitleControllerWithJobTitle() throws Exception {
+        // Perform a GET request to the endpoint with a job title and verify the response status and content
         mockMvc.perform(get("/api/v1/normalizer/Java engineer"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Software Engineer"));
@@ -26,6 +27,7 @@ public class NormalizeControllerIntegrationTest {
 
     @Test
     public void testNormalizeJobTitleControllerWithoutJobTitle() throws Exception {
+        // Perform a GET request to the endpoint without a job title and verify the response status and content
         mockMvc.perform(get("/api/v1/normalizer/"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Job Title not specified"));
