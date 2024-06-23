@@ -33,7 +33,7 @@ mvn clean install
 
 ### Running the Application
 
-Use the following command to start the application:
+You can run the application using your favorite IDE or by executing the following command:
 
 ```sh
 mvn spring-boot:run
