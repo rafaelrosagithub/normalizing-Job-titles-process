@@ -11,9 +11,9 @@
 	</parent>
 
 	<groupId>com.rafael.api</groupId>
-	<artifactId>normalizer</artifactId>
+	<artifactId>normalize</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-normalizer</name>
+	<name>api-normalize</name>
 	<description>App for Normalizing Job Titles process</description>
 	<url>https://github.com/rafaelrosagithub/test-normalizing-Job-titles-process/</url>
 

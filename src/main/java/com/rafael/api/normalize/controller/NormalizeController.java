@@ -1,6 +1,6 @@
-package com.rafael.api.normalizer.controller;
+package com.rafael.api.normalize.controller;
 
-import com.rafael.api.normalizer.service.NormalizerService;
+import com.rafael.api.normalize.service.NormalizeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/normalizer")
-public class NormalizerController {
+public class NormalizeController {
 
-    private final NormalizerService normalizerService;
+    private final NormalizeService normalizerService;
 
-    public NormalizerController(NormalizerService normalizerService) {
+    public NormalizeController(NormalizeService normalizerService) {
         this.normalizerService = normalizerService;
     }
 

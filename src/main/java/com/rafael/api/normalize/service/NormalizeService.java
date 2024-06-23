@@ -1,6 +1,6 @@
-package com.rafael.api.normalizer.service;
+package com.rafael.api.normalize.service;
 
-import com.rafael.api.normalizer.dto.Normalizer;
+import com.rafael.api.normalize.dto.Normalize;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.springframework.stereotype.Service;
 
@@ -8,14 +8,14 @@ import java.util.Arrays;
 import java.util.List;
 
 @Service
-public class NormalizerService {
+public class NormalizeService {
 
-    private final Normalizer normalizer;
+    private final Normalize normalize;
     private final LevenshteinDistance levenshteinDistance;
 
-    public NormalizerService() {
+    public NormalizeService() {
         List<String> titles = Arrays.asList("Architect", "Software Engineer", "Quantity Surveyor", "Accountant");
-        this.normalizer = new Normalizer(titles);
+        this.normalize = new Normalize(titles);
         this.levenshteinDistance = new LevenshteinDistance();
     }
 
@@ -23,7 +23,7 @@ public class NormalizerService {
         String closestMatch = null;
         int minDistance = Integer.MAX_VALUE;
 
-        for (String normalizedTitle : normalizer.normalizedJobTitles()) {
+        for (String normalizedTitle : normalize.normalizedJobTitles()) {
             int distance = levenshteinDistance.apply(jobTitle.toLowerCase(), normalizedTitle.toLowerCase());
             if (distance < minDistance) {
                 minDistance = distance;
@@ -35,6 +35,6 @@ public class NormalizerService {
     }
 
     public List<String> getNormalizedJobTitles() {
-        return normalizer.normalizedJobTitles();
+        return normalize.normalizedJobTitles();
     }
 }

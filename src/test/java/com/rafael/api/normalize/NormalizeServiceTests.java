@@ -1,6 +1,6 @@
-package com.rafael.api.normalizer;
+package com.rafael.api.normalize;
 
-import com.rafael.api.normalizer.service.NormalizerService;
+import com.rafael.api.normalize.service.NormalizeService;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -8,12 +8,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class NormalizerServiceTests {
+class NormalizeServiceTests {
 
     @Test
     public void testNormalizeJobTitle() {
-        // Create an instance of NormalizerService
-        NormalizerService service = new NormalizerService();
+        // Create an instance of NormalizeService
+        NormalizeService service = new NormalizeService();
 
         // Test cases for normalizeJobTitle method
         assertEquals("Software Engineer", service.normalizeJobTitle("Java Engineer"));
@@ -25,7 +25,7 @@ class NormalizerServiceTests {
     @Test
     public void testGetNormalizedJobTitles() {
         // Create an instance of the service
-        NormalizerService service = new NormalizerService();
+        NormalizeService service = new NormalizeService();
 
         // Call the method under test
         List<String> actualTitles = service.getNormalizedJobTitles();
