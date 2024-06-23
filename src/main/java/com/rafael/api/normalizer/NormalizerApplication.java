@@ -1,13 +1,13 @@
-package com.rafael.test_feefo;
+package com.rafael.api.normalizer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TestFeefoApplication {
+public class NormalizerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestFeefoApplication.class, args);
+		SpringApplication.run(NormalizerApplication.class, args);
 	}
 
 }
