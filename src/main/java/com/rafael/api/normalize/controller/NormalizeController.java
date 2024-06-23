@@ -18,9 +18,13 @@ public class NormalizeController {
         this.normalizerService = normalizerService;
     }
 
-    @GetMapping("/{jobTitle}")
-    public String normalizeJobTitleController(@PathVariable String jobTitle) {
-        return normalizerService.normalizeJobTitle(jobTitle);
+    @GetMapping({"/{jobTitle}", "/"})
+    public String normalizeJobTitleController(@PathVariable(required = false) String jobTitle) {
+        if (jobTitle == null) {
+            return "Job Title not specified";
+        } else {
+            return normalizerService.normalizeJobTitle(jobTitle);
+        }
     }
 
     @GetMapping("/titles")
