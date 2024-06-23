@@ -1,4 +1,4 @@
-package com.rafael.api.normalizer.controllers;
+package com.rafael.api.normalizer.controller;
 
 import com.rafael.api.normalizer.service.NormalizerService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class NormalizerController {
     }
 
     @GetMapping("/{jobTitle}")
-    public String normalizeJobTitle(@PathVariable String jobTitle) {
+    public String normalizeJobTitleController(@PathVariable String jobTitle) {
         return normalizerService.normalizeJobTitle(jobTitle);
     }
 
