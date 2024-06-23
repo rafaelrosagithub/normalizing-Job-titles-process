@@ -1,6 +1,7 @@
 package com.rafael.api.normalize.service;
 
 import com.rafael.api.normalize.dto.Normalize;
+import com.rafael.api.normalize.exception.NormalizeException;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,11 @@ public class NormalizeService {
                 minDistance = distance;
                 closestMatch = normalizedTitle;
             }
+        }
+
+        // Throw exception if no match found
+        if (closestMatch == null) {
+            throw new NormalizeException("No normalized job title found for input: " + jobTitle);
         }
 
         return closestMatch;
